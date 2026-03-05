@@ -264,7 +264,7 @@ export default function Transactions({ transactionItems }: HomeProps) {
             <select
               value={type}
               onChange={(e) => setType(e.target.value as "despesa" | "receita")}
-              disabled={selectedPersonId !== null && people.find(p => p.id === selectedPersonId && Number(p.age) < 18) !== null}
+              disabled={selectedPersonId !== null && people.find(p => p.id === selectedPersonId && Number(p.age) < 18) !== undefined}
             >
               {selectedPersonId && people.find(p => p.id === selectedPersonId && Number(p.age) < 18) ? (
                 <option value="despesa">Despesa</option>
