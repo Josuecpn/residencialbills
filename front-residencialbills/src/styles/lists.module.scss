@@ -1,0 +1,213 @@
+.container {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container h1 {
+  color: var(--white);
+}
+
+.containerHeader {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    background: transparent;
+    border: 0;
+    margin-left: 1rem;
+  }
+}
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--dark-900);
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.3rem;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.tag {
+  width: 9px;
+  background-color: var(--green-900);
+  height: 60px;
+  border-radius: 0.3rem 0 0 0.3rem;
+  margin-right: 1rem;
+}
+
+.emptyList {
+  font-size: 1.2rem;
+  color: var(--gray-100)
+}
+
+.form {
+  background-color: var(--dark-900);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  input, select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.3rem;
+    border: 2px solid var(--dark-900);
+    background-color: var(--dark-700);
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.2s;
+
+    &::placeholder {
+      color: var(--gray-100);
+      opacity: 0.8;
+    }
+
+    &:hover:not(:focus) {
+      border-color: var(--green-900);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--green-900);
+      box-shadow: 0 0 0 3px rgba(63, 255, 163, 0.2);
+    }
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    background-color: var(--green-900);
+    color: var(--dark-900);
+    padding: 0.75rem 1.5rem;
+    border: 0;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+}
+
+.warningMessage {
+  padding: 1rem;
+  background-color: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #FFC107;
+  border-radius: 0.3rem;
+  color: #FFC107;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.cancelButton {
+  background-color: var(--red-900) !important;
+  color: var(--white) !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 0.3rem !important;
+  margin-top: 0.5rem;
+  
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+.editButton, .deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  height: auto !important;
+}
+
+.editButton {
+  background-color: rgba(63, 255, 163, 0.1);
+  color: var(--green-900);
+  
+  &:hover {
+    background-color: rgba(63, 255, 163, 0.2);
+  }
+}
+
+.deleteButton {
+  background-color: rgba(255, 63, 75, 0.1);
+  color: var(--red-900);
+  
+  &:hover {
+    background-color: rgba(255, 63, 75, 0.2);
+  }
+}
+
+.itemContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  &[data-purpose="despesa"] {
+    background-color: rgba(255, 63, 75, 0.2);
+    color: var(--red-900);
+  }
+
+  &[data-purpose="receita"] {
+    background-color: rgba(63, 255, 163, 0.2);
+    color: var(--green-900);
+  }
+
+  &[data-purpose="ambas"] {
+    background-color: rgba(138, 138, 138, 0.2);
+    color: var(--gray-100);
+  }
+
+  &[data-age-variant="minor"] {
+    background-color: rgba(255, 193, 7, 0.2); // amarelo
+    color: #ffb300;
+    border: 1px solid #ffb300;
+  }
+
+  &[data-age-variant="adult"] {
+    background-color: rgba(63, 255, 163, 0.2); // verde
+    color: var(--green-900);
+    border: 1px solid var(--green-900);
+  }
+
+  &[data-age-variant="unknown"] {
+    background-color: rgba(138, 138, 138, 0.2);
+    color: var(--gray-100);
+    border: 1px solid var(--gray-100);
+  }
+}
+
+.description {
+  color: var(--white);
+  font-size: 1.1rem;
+}

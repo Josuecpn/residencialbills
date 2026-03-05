@@ -1,0 +1,6 @@
+@ResidencialBills_HostAddress = http://localhost:5215
+
+GET {{ResidencialBills_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
