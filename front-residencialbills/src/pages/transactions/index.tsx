@@ -203,12 +203,12 @@ export default function Transactions({ transactionItems }: HomeProps) {
 
     if (isMinor) {
       // Menor de idade: só categorias de despesa
-      return categories.filter(cat => cat.purpose === "despesa" || cat.purpose === "ambas");
+      return categories.filter(cat => cat.purpose === "despesa");
     }
 
-    // Maior de idade: filtra por tipo de transação
-    return categories.filter(cat => cat.purpose === type || cat.purpose === "ambas");
-  }, [selectedPersonId, type, categories, people]);
+    // Maior de idade: mostra todas as categorias disponíveis
+    return categories;
+  }, [selectedPersonId, categories, people]);
 
   return (
     <>
